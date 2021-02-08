@@ -29,6 +29,6 @@ presto-query-example:
 up: build create-docker-network persistence-up sleep10 minio-provision metastore-up \
 	hive-server-up presto-up sleep20 metastore-create-table presto-query-example
 down:
-	docker-compose -f docker-compose.s3-provision.yml down
+	docker-compose -f services/minio/docker-compose.s3-provision.yml down
 	docker-compose down
 	docker network rm datalake4os-net
